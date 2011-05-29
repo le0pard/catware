@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SignIn</title>
+  <%= stylesheet_link_tag "web-app-theme/base" %>
+  <%= stylesheet_link_tag "web-app-theme/themes/drastic-dark/style" %>
+  <%= stylesheet_link_tag "web-app-theme/override" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="container">
+    <div id="box">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

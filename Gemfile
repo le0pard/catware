@@ -23,6 +23,7 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'thin'
+  gem 'web-app-theme', '>= 0.6.2'
 end
 
 group :capistrano do

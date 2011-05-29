@@ -125,6 +125,7 @@ GEM
     uglifier (0.5.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    web-app-theme (0.6.3)
 
 PLATFORMS
   ruby
@@ -147,3 +148,4 @@ DEPENDENCIES
   therubyracer (= 0.9.0beta3)
   thin
   uglifier
+  web-app-theme (>= 0.6.2)
