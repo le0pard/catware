@@ -19,6 +19,7 @@ class Admin::UserSessionsController < ApplicationController
  
   def destroy
     session.delete(:user_id)
+    flash[:notice] = t('user_sessions.destroy.flash.notice')
     redirect_to :action => :new
   end
 end

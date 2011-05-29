@@ -13,3 +13,6 @@ en:
       flash:
         error: "bad email/password combination"
         notice: "Signin successful"
+    destroy:
+      flash:
+        notice: "Logout successful"
