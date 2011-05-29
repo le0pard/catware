@@ -6,21 +6,28 @@ gem 'rails', '3.1.0.rc1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'pg'
 
 # Asset template engines
 gem 'json'
 gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
+gem 'paperclip'
+gem 'kaminari'
+gem 'settingslogic'
+gem 'therubyracer', '0.9.0beta3'
+gem 'nested_set'
 
 gem 'jquery-rails'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+group :development, :test do
+  gem 'thin'
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug'
+group :capistrano do
+  gem 'net-ssh', "<= 2.0.24"
+  gem 'capistrano'
+  gem 'capistrano-ext', :require => 'capistrano/ext/multistage'
+end
 
