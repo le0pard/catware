@@ -6,13 +6,14 @@ en:
     admin_header: "Catware Admin Panel"
     logout: "Logout"
     signin: "Signin"
-  user_sessions:
-    create:
-      email: "Email"
-      password: "Password"
-      flash:
-        error: "bad email/password combination"
-        notice: "Signin successful"
-    destroy:
-      flash:
-        notice: "Logout successful"
+  admin:
+    user_sessions:
+      create:
+        email: "Email"
+        password: "Password"
+        flash:
+          error: "bad email/password combination"
+          notice: "Signin successful"
+      destroy:
+        flash:
+          notice: "Logout successful"
