@@ -2,4 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  defaults:
+    admin_header: "Catware Admin Panel"
+    logout: "Logout"
+  user_sessions:
+    create:
+      flash:
+        error: "bad email/password combination"
+        notice: "Signin successful"
