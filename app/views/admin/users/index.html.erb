@@ -1,0 +1,28 @@
+<div class="block" id="block-tables">
+  <div class="content">
+    <h2 class="title">Users</h2>
+    <div class="inner">
+      <table class="table">
+       <tr>
+          <th class="first">ID</th>
+          <th>Email</th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @users.each do |user| %>
+          <tr class="<%=cycle('odd', 'even')%>">
+            <td><%=user.id%></td>
+            <td><%=user.email%></td>
+            <td class="last">
+              <a href="#">show</a> | <a href="#">edit</a> | <a href="#">destroy</a>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="pagination">
+          <%= paginate @users %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
