@@ -13,12 +13,15 @@
             <td><%=user.id%></td>
             <td><%=user.email%></td>
             <td class="last">
-              <a href="#">show</a> | <a href="#">edit</a> | <a href="#">destroy</a>
+              <%=link_to "edit", edit_admin_user_path(user) %> | <%=link_to "delete", admin_user_path(user), :confirm => "Are you sure?", :method => :delete %>
             </td>
           </tr>
         <% end %>
       </table>
       <div class="actions-bar wat-cf">
+        <div class="actions">
+          <%=link_to "Add user", new_admin_user_path %>
+        </div>
         <div class="pagination">
           <%= paginate @users %>
         </div>
