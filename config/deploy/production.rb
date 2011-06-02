@@ -17,10 +17,10 @@ set :private_db_ip, "localhost"
 
 set :branch, :master
 
-set :app_server, :passanger
+set :app_server, :unicorn
 
 set :use_sudo, false
 
-set :deploy_to, "/var/www/apps/#{application}"
+set :deploy_to, "/var/data/www/apps/#{application}"
 
 after "deploy", "deploy:migrate", "deploy:cleanup"
