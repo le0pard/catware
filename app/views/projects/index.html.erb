@@ -1,0 +1,3 @@
+<% @projects.each do |project| %>
+  <%=link_to project.title, show_project_path(:slug => project.cached_slug)%>
+<% end %>

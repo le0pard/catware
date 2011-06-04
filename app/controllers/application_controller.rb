@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
   
   helper_method :current_user, :user_signed_in?, :user_signed_out?
   
+  def redirect_page_not_found
+    redirect_to page_not_found_path
+  end
+  
   def current_user
     if session[:user_id]
       @current_user ||= User.find(session[:user_id])
