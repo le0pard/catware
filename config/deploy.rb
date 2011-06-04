@@ -1,7 +1,6 @@
 require "capistrano/ext/multistage"
 require "bundler/capistrano"
 require File.expand_path('../../lib/capistrano_recipes/tasks/capistrano_database_yml.rb', __FILE__)
-require File.expand_path('../../lib/capistrano_recipes/tasks/unicorn.rb', __FILE__)
 #Dir['lib/capistrano_recipes/tasks/*.rb'].each { |task| require task }
 
 set :stages, %w(production)
@@ -19,14 +18,6 @@ set :keep_releases, 3
 
 task :assets_precompile, :roles => :app, :except => { :no_release => true } do
   run "cd #{release_path}; bundle exec rake assets:precompile RAILS_ENV=#{rails_env}"
-end
-
-namespace :deploy do
-   task :start do ; end
-   task :stop do ; end
-   task :restart, :roles => :app, :except => { :no_release => true } do
-     unicorn.restart
-   end
 end
 
 #namespace :deploy do

@@ -17,7 +17,7 @@ set :private_db_ip, "localhost"
 
 set :branch, :master
 
-set :app_server, :unicorn
+set :server, :unicorn
 
 set :use_sudo, false
 

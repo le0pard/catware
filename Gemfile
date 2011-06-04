@@ -31,5 +31,6 @@ group :capistrano do
   gem 'net-ssh', "<= 2.0.24"
   gem 'capistrano'
   gem 'capistrano-ext', :require => 'capistrano/ext/multistage'
+  gem 'capistrano-recipes'
 end
 
