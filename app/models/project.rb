@@ -9,7 +9,8 @@ class Project < ActiveRecord::Base
                     :styles => { :medium => "300x300>",
                                  :thumb => "100x100>" }
   
-  has_many :media_attachments, :as => :owner
+  has_many :media_attachments, :as => :owner, :dependent => :destroy
+  accepts_nested_attributes_for :media_attachments, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:media].blank? }
   
   module TYPE
     WEB = 0

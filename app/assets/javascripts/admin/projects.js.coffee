@@ -1,3 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  $(".remove-attach").live "click", (event) =>
+    obj = $(event.target)
+    p = obj.parents('li')
+    p.remove()
+    return false
+  if ($("#attach-more").length > 0)
+    $("#attach-more").bind 'click', (event) =>
+      e = "<li><input type='file' name='attachments[]' /> <a href='#' class='remove-attach'>Delete</a></li>"
+      $("#attach-list").append e
+      return false
+      

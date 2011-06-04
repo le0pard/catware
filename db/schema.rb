@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110604155808) do
+ActiveRecord::Schema.define(:version => 20110604165027) do
+
+  create_table "media_attachments", :force => true do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.string   "media_file_name"
+    t.string   "media_content_type"
+    t.integer  "media_file_size"
+    t.datetime "media_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "projects", :force => true do |t|
     t.integer  "type_id"
