@@ -1,0 +1,30 @@
+<div class="group">
+  <%=form.label :type_id, :class => "label" %>
+  <%=form.error_message_on :type_id %>
+  <%=form.select :type_id, [[Project::TYPE::HUMAN[Project::TYPE::WEB], Project::TYPE::WEB], [Project::TYPE::HUMAN[Project::TYPE::MOBILE], Project::TYPE::MOBILE]] %>
+  <span class="description">Ex: some project</span>
+</div>
+<div class="group">
+  <%=form.label :title, :class => "label" %>
+  <%=form.error_message_on :title %>
+  <%=form.text_field :title, :class => "text_field" %>
+  <span class="description">Ex: some project</span>
+</div>
+<div class="group">
+  <%=form.label :project_name, :class => "label" %>
+  <%=form.error_message_on :project_name %>
+  <%=form.text_field :project_name, :class => "text_field" %>
+  <span class="description">Ex: com.example.project_name</span>
+</div>
+<div class="group">
+  <%=form.label :short_description, :class => "label" %>
+  <%=form.error_message_on :short_description %>
+  <%=form.text_area :short_description, :class => "text_area", :rows => 10, :cols => 25 %>
+  <span class="description">Ex: text</span>
+</div>
+<div class="group">
+  <%=form.label :full_description, :class => "label" %>
+  <%=form.error_message_on :full_description %>
+  <%=form.text_area :full_description, :class => "text_area", :rows => 20, :cols => 25 %>
+  <span class="description">Ex: text</span>
+</div>
