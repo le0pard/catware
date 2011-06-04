@@ -8,6 +8,7 @@ gem 'rails', '3.1.0.rc1'
 gem 'sqlite3'
 gem 'pg'
 gem 'unicorn'
+gem 'rvm'
 
 # Asset template engines
 gem 'json'
