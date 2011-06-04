@@ -9,7 +9,7 @@ Capistrano::Configuration.instance.load do
     namespace :thin do
 
       desc <<-DESC
-        Creates the unicorn.conf.rb configuration file in shared path.
+        Creates the thin.conf.rb configuration file in shared path.
       DESC
       task :setup, :except => { :no_release => true } do
         run "mkdir -p #{shared_path}/db" 
@@ -21,21 +21,21 @@ Capistrano::Configuration.instance.load do
         Restart thin
       DESC
       task :restart, :except => { :no_release => true }, :on_error => :continue do
-        run "cd #{current_path}; bundle exec thin restart -C #{shared_path}/config/thin.yml" 
+        run "cd #{release_path}; bundle exec thin restart -C #{shared_path}/config/thin.yml" 
       end
       
       desc <<-DESC
         Start thin
       DESC
       task :start, :except => { :no_release => true } do
-        run "cd #{current_path}; bundle exec thin start -C #{shared_path}/config/thin.yml"
+        run "cd #{release_path}; bundle exec thin start -C #{shared_path}/config/thin.yml"
       end
       
       desc <<-DESC
         Stop thin
       DESC
       task :stop, :except => { :no_release => true }, :on_error => :continue do
-        run "cd #{current_path}; bundle exec thin stop -C #{shared_path}/config/thin.yml"
+        run "cd #{release_path}; bundle exec thin stop -C #{shared_path}/config/thin.yml"
       end
 
     end
