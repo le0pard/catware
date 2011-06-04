@@ -1,0 +1,19 @@
+<%= form_for @contact, :url => contacts_path do |form| %>
+  <%=form.label :name, :class => "label" %>
+  <%=form.error_message_on :name %>
+  <%=form.text_field :name, :class => "text_field" %>
+
+  <%=form.label :email, :class => "label" %>
+  <%=form.error_message_on :email %>
+  <%=form.text_field :email, :class => "text_field" %>
+
+  <%=form.label :subject, :class => "label" %>
+  <%=form.error_message_on :subject %>
+  <%=form.text_field :subject, :class => "text_field" %>
+
+  <%=form.label :message, :class => "label" %>
+  <%=form.error_message_on :message %>
+  <%=form.text_area :message, :class => "text_area", :rows => 10, :cols => 20 %>
+
+  <%=form.submit "Send" %>
+<% end %>

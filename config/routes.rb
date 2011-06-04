@@ -9,11 +9,17 @@ Catware::Application.routes.draw do
     root :to => 'projects#index'
   end
   
+  match "contacts" => 'contacts#index', :as => :contacts, :via => :get
+  match "contacts" => 'contacts#create', :as => :contacts, :via => :post
+  match "services/mobile" => 'services#mobile', :as => :mobile_services, :via => :get
+  match "services/web" => 'services#web', :as => :web_services, :via => :get
   match "projects/:slug" => 'projects#show', :as => :show_project, :via => :get
   match "projects" => 'projects#index', :as => :projects, :via => :get
   
   match "404", :to => 'errors#page_not_found', :as => :page_not_found
   match "*path", :to => 'errors#page_not_found'
+  
+  root :to => 'dashboard#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div>
+  <%=render :partial => "shared/top" %>
+</div>
+<div class="flash">
+  <% flash.each do |type, message| -%>
+    <div class="message <%= type %>">
+      <p><%= message %></p>
+    </div>
+  <% end -%>
+</div>
+<div>
+  <%= yield %>
+</div>
+<div>
+  <%=render :partial => "shared/bottom" %>
+</div>
 </body>
 </html>
