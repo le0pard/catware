@@ -13,7 +13,7 @@ preload_app true
 timeout 30
 
 # Listen on a Unix data socket
-listen RAILS_ROOT + '/current/tmp/sockets/unicorn.sock', :backlog => 2048
+listen '/var/data/www/apps/catware/current/tmp/sockets/unicorn.sock', :backlog => 2048
 
 ##
 # REE
