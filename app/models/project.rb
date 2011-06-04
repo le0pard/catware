@@ -9,6 +9,8 @@ class Project < ActiveRecord::Base
                     :styles => { :medium => "300x300>",
                                  :thumb => "100x100>" }
   
+  has_many :media_attachments, :as => :owner
+  
   module TYPE
     WEB = 0
     ANDROID = 1
