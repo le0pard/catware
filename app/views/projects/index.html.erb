@@ -1,3 +1,11 @@
 <% @projects.each do |project| %>
   <%=link_to project.title, show_project_path(:slug => project.cached_slug)%>
+  <div>
+    <%=raw(project.short_description_markdown)%>
+  </div>
+  <% if project.logo_img? %>
+    <div>
+      <%=image_tag project.logo_img.url(:medium), :alt => project.title %>
+    </div>
+  <% end %>
 <% end %>

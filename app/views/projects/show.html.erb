@@ -1,2 +1,17 @@
 <%= content_for(:title, @project.title) %>
 <h1><%=@project.title%></h1>
+<div>
+  <%=raw(@project.full_description_markdown)%>
+</div>
+<% if @project.logo_img? %>
+  <div>
+    <%=image_tag @project.logo_img.url(:medium), :alt => @project.title %>
+  </div>
+<% end %>
+
+<div>
+  <a href="https://market.android.com/details?id=<%=@project.project_name%>">Market</a>
+</div>
+<div>
+  <img src="http://chart.apis.google.com/chart?cht=qr&chs=164x164&chl=market://details?id=<%=@project.project_name%>" alt="<%=@project.title%>" />
+</div>
