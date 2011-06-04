@@ -23,5 +23,5 @@ set :use_sudo, false
 
 set :deploy_to, "/var/data/www/apps/#{application}"
 
-after "deploy", "deploy:migrate", "deploy:cleanup"
+after "deploy", "deploy:migrate", "deploy:cleanup", "deploy:thin:restart"
 after 'deploy:update_code', 'assets_precompile'

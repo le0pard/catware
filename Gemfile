@@ -7,8 +7,8 @@ gem 'rails', '3.1.0.rc1'
 
 gem 'sqlite3'
 gem 'pg'
-gem 'unicorn'
 gem 'rvm'
+gem 'thin'
 
 # Asset template engines
 gem 'json'
@@ -25,7 +25,6 @@ gem 'dynamic_form'
 gem 'jquery-rails'
 
 group :development, :test do
-  gem 'thin'
   gem 'web-app-theme', '>= 0.6.2'
 end
 
