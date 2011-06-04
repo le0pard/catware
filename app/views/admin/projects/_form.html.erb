@@ -1,7 +1,13 @@
 <div class="group">
   <%=form.label :type_id, :class => "label" %>
   <%=form.error_message_on :type_id %>
-  <%=form.select :type_id, [[Project::TYPE::HUMAN[Project::TYPE::WEB], Project::TYPE::WEB], [Project::TYPE::HUMAN[Project::TYPE::MOBILE], Project::TYPE::MOBILE]] %>
+  <%=form.select :type_id, 
+    [
+      [Project::TYPE::HUMAN[Project::TYPE::WEB], Project::TYPE::WEB], 
+      [Project::TYPE::HUMAN[Project::TYPE::ANDROID], Project::TYPE::ANDROID],
+      [Project::TYPE::HUMAN[Project::TYPE::IPHONE], Project::TYPE::IPHONE],
+      [Project::TYPE::HUMAN[Project::TYPE::IPAD], Project::TYPE::IPAD]
+    ] %>
   <span class="description">Ex: some project</span>
 </div>
 <div class="group">

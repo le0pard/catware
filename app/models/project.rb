@@ -11,9 +11,11 @@ class Project < ActiveRecord::Base
   
   module TYPE
     WEB = 0
-    MOBILE = 1
-    NAMES = [:web, :mobile]
-    HUMAN = ["web", "mobile"]
+    ANDROID = 1
+    IPHONE = 2
+    IPAD = 3
+    NAMES = [:web, :android, :iphone, :ipad]
+    HUMAN = ["web", "android", "iphone", "ipad"]
   end
   
   def type_human
@@ -24,8 +26,8 @@ class Project < ActiveRecord::Base
     TYPE::WEB == self.type_id
   end
   
-  def is_mobile?
-    TYPE::MOBILE == self.type_id
+  def is_android?
+    TYPE::ANDROID == self.type_id
   end
   
   def short_description_markdown
