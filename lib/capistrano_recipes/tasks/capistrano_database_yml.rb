@@ -120,7 +120,7 @@ Capistrano::Configuration.instance.load do
 production:
   adapter: postgresql
   host: localhost
-  port: 6432
+  port: 5432
   database: catware_db
   username: catware_user
   password: catware20112011
