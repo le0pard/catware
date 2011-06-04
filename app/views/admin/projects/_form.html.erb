@@ -42,19 +42,24 @@
   <%=form.text_area :full_description, :class => "text_area", :rows => 20, :cols => 25 %>
   <span class="description">Ex: text</span>
 </div>
-<%= form.fields_for :media_attachments, form.object.media_attachments do |media_attachment| %>
-  <div class="group">
-    <%=media_attachment.label :media, :class => "label" %>
-    <%=media_attachment.error_message_on :media %>
-    <% if media_attachment.object.media? %>
-      <%=image_tag media_attachment.object.media.url(:thumb) %>
-    <% end %>
-    <%=media_attachment.file_field :media %>
-  </div>
-  <% unless media_attachment.object.new_record? %>
+<div id="attach-list">
+  <%= form.fields_for :media_attachments, form.object.media_attachments do |media_attachment| %>
     <div class="group">
-      <%= media_attachment.check_box :_destroy %>
-      <%= media_attachment.label :_destroy, 'Remove' %>
+      <%=media_attachment.label :media, :class => "label" %>
+      <%=media_attachment.error_message_on :media %>
+      <% if media_attachment.object.media? %>
+        <%=image_tag media_attachment.object.media.url(:thumb) %>
+      <% end %>
+      <%=media_attachment.file_field :media %>
     </div>
+    <% unless media_attachment.object.new_record? %>
+      <div class="group">
+        <%= media_attachment.check_box :_destroy %>
+        <%= media_attachment.label :_destroy, 'Remove' %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+<div class="group">
+  <a href="#" id="attach-more">Add more images</a>
+</div>

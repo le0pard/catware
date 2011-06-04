@@ -20,7 +20,7 @@ class Admin::ProjectsController < Admin::BaseController
   end
   
   def edit
-    @project.media_attachments.build
+    #
   end
   
   def update
