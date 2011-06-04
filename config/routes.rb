@@ -1,11 +1,12 @@
 Catware::Application.routes.draw do
   
   namespace :admin do
+    resources :projects
     resources :users
     match "signin" => 'user_sessions#new', :as => :signin, :via => :get
     match "signin" => 'user_sessions#create', :as => :signin, :via => :post
     match "logout" => 'user_sessions#destroy', :as => :logout, :via => :get
-    root :to => 'users#index'
+    root :to => 'projects#index'
   end
   
   # The priority is based upon order of creation:

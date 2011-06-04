@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::BaseController
   before_filter :find_user, :only => [:edit, :update, :destroy]
   
   def index
-    @users = User.order(:email).page params[:page]
+    @users = User.order(:email).page(params[:page])
   end
   
   def new

@@ -7,6 +7,10 @@ class Project < ActiveRecord::Base
     HUMAN = ["web", "mobile"]
   end
   
+  def type_human
+    TYPE::HUMAN[self.type_id].capitalize
+  end
+  
   def is_web?
     TYPE::WEB == self.type_id
   end
