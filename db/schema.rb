@@ -10,16 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110604133503) do
+ActiveRecord::Schema.define(:version => 20110604151528) do
 
   create_table "projects", :force => true do |t|
     t.integer  "type_id"
-    t.string   "title",             :null => false
+    t.string   "title",                 :null => false
     t.text     "short_description"
     t.text     "full_description"
     t.string   "project_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "logo_img_file_name"
+    t.string   "logo_img_content_type"
+    t.integer  "logo_img_file_size"
+    t.datetime "logo_img_updated_at"
   end
 
   create_table "users", :force => true do |t|

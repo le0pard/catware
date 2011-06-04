@@ -2,7 +2,7 @@
   <div class="content">
     <h2 class="title">Add project</h2>
     <div class="inner">
-      <%= form_for [:admin, @project], :html => { :class => "form" } do |f| %>
+      <%= form_for [:admin, @project], :html => { :class => "form", :multipart => true } do |f| %>
         <%= render :partial => "form", :object => f%>
         <div class="group navform wat-cf">
           <%=f.submit "Add", :class => "button" %>

@@ -21,6 +21,7 @@ gem 'settingslogic'
 gem 'therubyracer', '0.9.0beta3'
 gem 'nested_set'
 gem 'dynamic_form'
+gem 'rdiscount', :require => 'rdiscount'
 
 gem 'jquery-rails'
 

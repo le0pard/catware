@@ -17,6 +17,14 @@
   <span class="description">Ex: com.example.project_name</span>
 </div>
 <div class="group">
+  <%=form.label :logo_img, :class => "label" %>
+  <%=form.error_message_on :logo_img %>
+  <% if form.object.logo_img? %>
+    <%=image_tag form.object.logo_img.url(:thumb) %>
+  <% end %>
+  <%=form.file_field :logo_img %>
+</div>
+<div class="group">
   <%=form.label :short_description, :class => "label" %>
   <%=form.error_message_on :short_description %>
   <%=form.text_area :short_description, :class => "text_area", :rows => 10, :cols => 25 %>

@@ -1,5 +1,12 @@
 class Project < ActiveRecord::Base
   
+  validates :title, :presence => true
+  validates :short_description, :presence => true
+  
+  has_attached_file :logo_img, 
+                    :styles => { :medium => "300x300>",
+                                 :thumb => "100x100>" }
+  
   module TYPE
     WEB = 0
     MOBILE = 1
@@ -19,4 +26,13 @@ class Project < ActiveRecord::Base
     TYPE::MOBILE == self.type_id
   end
   
+  def short_description_markdown
+    markdown = RDiscount.new(self.short_description)
+    return markdown.to_html
+  end
+  
+  def full_description_markdown
+    markdown = RDiscount.new(self.full_description)
+    return markdown.to_html
+  end
 end
