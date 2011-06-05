@@ -1,19 +1,45 @@
-<%= form_for @contact, :url => contacts_path do |form| %>
-  <%=form.label :name, :class => "label" %>
-  <%=form.error_message_on :name %>
-  <%=form.text_field :name, :class => "text_field" %>
+<section class="main">
+  <h1>Contacts</h1>
+  <p>You can send us a message using the form below.</p>
+  <%= form_for @contact, :url => contacts_path do |form| %>
+   <div class="line">
+      <label for="contact_name"><span class="req">*</span> Name:</label>
+      <%=form.error_message_on :name %>
+      <%=form.text_field :name, :autofocus => "autofocus" %>
+   </div> <!-- line -->
+   <div class="line">
+      <label for="contact_email"><span class="req">*</span> Email:</label>
+      <%=form.error_message_on :email %>
+      <%=form.text_field :email %>
+   </div> <!-- line -->
+   <div class="line">
+      <label for="contact_subject"><span class="req">*</span> Subject:</label>
+      <%=form.error_message_on :subject %>
+      <%=form.text_field :subject %>
+   </div> <!-- line -->
+   <div class="line">
+      <label for="contact_message"><span class="req">*</span> Message:</label>
+      <%=form.error_message_on :message %>
+      <%=form.text_area :message, :rows => 5, :cols => 50 %>
+   </div> <!-- line -->
+   <div class="submit">
+      <%=form.submit "Send" %>   
+   </div> <!-- submit -->
+  <% end %>
+</section>
 
-  <%=form.label :email, :class => "label" %>
-  <%=form.error_message_on :email %>
-  <%=form.text_field :email, :class => "text_field" %>
-
-  <%=form.label :subject, :class => "label" %>
-  <%=form.error_message_on :subject %>
-  <%=form.text_field :subject, :class => "text_field" %>
-
-  <%=form.label :message, :class => "label" %>
-  <%=form.error_message_on :message %>
-  <%=form.text_area :message, :class => "text_area", :rows => 10, :cols => 20 %>
-
-  <%=form.submit "Send" %>
-<% end %>
+<aside>
+  <h2>Наши контакты:</h2>
+  <div class="vcard">
+    <div class="org">CatWare</div>
+    <div class="adr">
+      <span class="country-name">Ukraine</span>,
+      <span class="locality">Kiev</span>
+    </div>
+    <div class="mailbox">
+      <%=mail_to "contact@catware.co", nil, :encode => "hex", :replace_at => "[at]", :replace_dot => "[dot]" %>
+    </div>
+    <div class="tel">+38 0979704432</div>
+    <div class="im">catware</div> <!-- im -->
+  </div> <!-- vcard -->
+</aside>

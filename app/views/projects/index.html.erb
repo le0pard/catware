@@ -1,11 +1,12 @@
-<% @projects.each do |project| %>
-  <%=link_to project.title, show_project_path(:slug => project.cached_slug)%>
-  <div>
-    <%=raw(project.short_description_markdown)%>
-  </div>
-  <% if project.logo_img? %>
-    <div>
-      <%=image_tag project.logo_img.url(:medium), :alt => project.title %>
-    </div>
+<h1>Mobile App</h1>
+<ul class="projects">
+  <% @projects.each do |project| %>
+    <li>
+      <h2><%=link_to project.title, show_project_path(project)%></h2>
+      <p><%=raw(project.short_description_markdown)%></p>
+      <% if project.logo_img? %>
+          <%=image_tag project.logo_img.url(:medium), :alt => project.title %>
+      <% end %>
+    </li>
   <% end %>
-<% end %>
+</ul>

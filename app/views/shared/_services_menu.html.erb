@@ -1,4 +1,20 @@
-<ul>
-  <%=project_menu_item "Mobile App", mobile_services_path, true %>
-  <%=project_menu_item "Web App", web_services_path, true %>
-</ul>
+<aside>
+  <ul class="app-nav">
+    <%=project_menu_item "Mobile App", mobile_services_path, true %>
+    <%=project_menu_item "Web App", web_services_path, true %>
+  </ul>
+  <h2>Featured App</h2>
+  <dl>
+    <dt>
+      <%=image_tag "android.png", :alt => "android apps" %>
+    </dt>
+    <dd>
+        <ul>
+            <li><a href="#">PopcornUA</a></li>
+            <li><a href="#">Rusavtobus</a></li>
+            <li><a href="#">Shake&amp;Mute</a></li>
+            <li><a href="#">KIA News</a></li>
+        </ul>
+    </dd>
+  </dl>
+</aside>

@@ -1,19 +1,42 @@
 <%= content_for(:title, @project.title) %>
-<h1><%=@project.title%></h1>
-<div>
-  <%=raw(@project.full_description_markdown)%>
-</div>
-<% if @project.logo_img? %>
-  <div>
-    <%=image_tag @project.logo_img.url(:medium), :alt => @project.title %>
-  </div>
-<% end %>
 
+<section class="main">
+  <h1><%=@project.title%></h1>
+  <p><%=raw(@project.full_description_markdown)%></p>
+  <% if @project.logo_img? %>
+    <div>
+      <%=image_tag @project.logo_img.url(:medium), :alt => @project.title, :class => "app-img" %>
+    </div>
+  <% end %>
+  <ul class="screens">
+    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
+    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
+    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
+    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
+    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
+    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
+  </ul>
+</section>
+
+<aside>
 <% if @project.is_android? %>
-  <div>
-    <a href="https://market.android.com/details?id=<%=@project.project_name%>">Market</a>
-  </div>
-  <div>
+  <p>
     <img src="http://chart.apis.google.com/chart?cht=qr&chs=164x164&chl=market://details?id=<%=@project.project_name%>" alt="<%=@project.title%>" />
-  </div>
+  </p>
+  <p>
+    <a href="https://market.android.com/details?id=<%=@project.project_name%>"><%=image_tag "market.png", :alt => "market"%></a>
+  </p>
 <% end %>
+<p>
+<a href="#" class="pdf">
+<em>Руководство по использованию</em>
+<span>PDF, 4 МБ</span>
+</a>
+</p>
+<div class="promo">
+<a href="#" class="movie">
+<%=image_tag "movie.png", :alt => "промо-ролик"%>
+<span>PopCorn промо-ролик</span>
+</a>
+</div> <!-- promo -->
+</aside>
