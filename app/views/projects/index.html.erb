@@ -2,7 +2,7 @@
 <ul class="projects">
   <% @projects.each do |project| %>
     <li>
-      <h2><%=link_to project.title, show_project_path(project)%></h2>
+      <h2><%=link_to project.title, show_project_path(project), :class => "project_link" %></h2>
       <p><%=raw(project.short_description_markdown)%></p>
       <% if project.logo_img? %>
           <%=image_tag project.logo_img.url(:medium), :alt => project.title %>
