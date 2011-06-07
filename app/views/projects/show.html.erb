@@ -21,7 +21,7 @@
 <aside>
 <% if @project.is_android? %>
   <p>
-    <img src="http://chart.apis.google.com/chart?cht=qr&chs=164x164&chl=market://details?id=<%=@project.project_name%>" alt="<%=@project.title%>" />
+    <img class="qrcode" src="http://chart.apis.google.com/chart?cht=qr&chs=164x164&chl=market://details?id=<%=@project.project_name%>" alt="<%=@project.title%>" />
   </p>
   <p>
     <a href="https://market.android.com/details?id=<%=@project.project_name%>"><%=image_tag "market.png", :alt => "market"%></a>
