@@ -6,8 +6,8 @@ class Project < ActiveRecord::Base
   has_friendly_id :title, :use_slug => true
   
   has_attached_file :logo_img, 
-                    :styles => { :medium => "300x300>",
-                                 :thumb => "100x100>" }
+                    :styles => { :medium => "320x440>",
+                                 :thumb => "100x140>" }
   
   has_many :media_attachments, :as => :owner, :dependent => :destroy
   accepts_nested_attributes_for :media_attachments, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:media].blank? }
