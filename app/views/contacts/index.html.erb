@@ -27,19 +27,4 @@
    </div> <!-- submit -->
   <% end %>
 </section>
-
-<aside>
-  <h2>Наши контакты:</h2>
-  <div class="vcard">
-    <div class="org">CatWare</div>
-    <div class="adr">
-      <span class="country-name">Ukraine</span>,
-      <span class="locality">Kiev</span>
-    </div>
-    <div class="mailbox">
-      <%=mail_to "contact@catware.co", "Email us", :encode => "hex", :replace_at => "[at]", :replace_dot => "[dot]" %>
-    </div>
-    <div class="tel">+38 0979704432</div>
-    <div class="im">catware</div> <!-- im -->
-  </div> <!-- vcard -->
-</aside>
+<%=render :partial => "shared/contact_box" %>
