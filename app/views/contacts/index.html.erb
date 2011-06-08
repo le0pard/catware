@@ -3,23 +3,23 @@
   <p>You can send us a message using the form below.</p>
   <%= form_for @contact, :url => contacts_path do |form| %>
    <div class="line">
-      <label for="contact_name"><span class="req">*</span> Name:</label>
       <%=form.error_message_on :name %>
+      <label for="contact_name"><span class="req">*</span> Name:</label>
       <%=form.text_field :name, :autofocus => "autofocus" %>
    </div> <!-- line -->
    <div class="line">
-      <label for="contact_email"><span class="req">*</span> Email:</label>
       <%=form.error_message_on :email %>
+      <label for="contact_email"><span class="req">*</span> Email:</label>
       <%=form.text_field :email %>
    </div> <!-- line -->
    <div class="line">
-      <label for="contact_subject"><span class="req">*</span> Subject:</label>
       <%=form.error_message_on :subject %>
+      <label for="contact_subject"><span class="req">*</span> Subject:</label>
       <%=form.text_field :subject %>
    </div> <!-- line -->
    <div class="line">
-      <label for="contact_message"><span class="req">*</span> Message:</label>
       <%=form.error_message_on :message %>
+      <label for="contact_message"><span class="req">*</span> Message:</label>
       <%=form.text_area :message, :rows => 5, :cols => 50 %>
    </div> <!-- line -->
    <div class="submit">

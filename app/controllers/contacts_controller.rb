@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   
   def create
     @contact = Contact.new(params[:contact])
-    if @contact.valid?
+    if @contact.save
       #flash[:notice] = "Thank you"
       redirect_to :action => :thank_you
     else
