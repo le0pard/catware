@@ -2,7 +2,9 @@
 
 <section class="main">
   <h1><%=@project.title%></h1>
-  <p><%=raw(@project.full_description_markdown)%></p>
+  <div class="markdown">
+    <%=raw(@project.full_description_markdown)%>
+  </div>
   <% if @project.logo_img? %>
     <div>
       <%=image_tag @project.logo_img.url(:main), :alt => @project.title, :class => "app-img" %>

@@ -99,6 +99,10 @@ nav {
     top: 0;
 }
 
+nav ul {
+    list-style-type: none;
+}
+
 nav li {
     display: inline;
     margin: 0 30px;
@@ -205,6 +209,16 @@ nav li.active a {
 .content h1.motto strong {
     font-weight: normal;
     color: #3992d6;
+}
+
+.markdown ul, ul.list {
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.markdown li, ul.list li {
+    padding-left: 20px;
+    background: url(<%= asset_path 'bullet.png' %>) no-repeat 0 50%;
 }
 
 /* projects */
@@ -352,17 +366,6 @@ nav li.active a {
     margin-left: -35px;
     background: #65bfff url(<%= asset_path 'app-nav-active.png' %>) no-repeat 0 0;
     color: #fff;
-}
-
-/* features */
-.features {
-    margin-left: 20px;
-    margin-bottom: 30px;
-}
-
-.features li {
-    padding-left: 20px;
-    background: url(<%= asset_path 'bullet.png' %>) no-repeat 0 50%;
 }
 
 /* vcard */
