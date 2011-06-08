@@ -2,7 +2,7 @@
 
 <section class="main">
   <h1><%=@project.title%></h1>
-  <div class="markdown">
+  <div class="markdown padding_little">
     <%=raw(@project.full_description_markdown)%>
   </div>
   <% if @project.logo_img? %>
