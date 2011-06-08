@@ -6,7 +6,8 @@ class Project < ActiveRecord::Base
   has_friendly_id :title, :use_slug => true
   
   has_attached_file :logo_img, 
-                    :styles => { :medium => "320x440>",
+                    :styles => { :main => "380x525>",
+                                 :medium => "320x440>",
                                  :thumb => "100x140>" }
   
   has_many :media_attachments, :as => :owner, :dependent => :destroy

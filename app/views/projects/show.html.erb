@@ -5,7 +5,7 @@
   <p><%=raw(@project.full_description_markdown)%></p>
   <% if @project.logo_img? %>
     <div>
-      <%=image_tag @project.logo_img.url(:medium), :alt => @project.title, :class => "app-img" %>
+      <%=image_tag @project.logo_img.url(:main), :alt => @project.title, :class => "app-img" %>
     </div>
   <% end %>
   <ul class="screens">
