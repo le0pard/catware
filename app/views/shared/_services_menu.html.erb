@@ -10,10 +10,9 @@
     </dt>
     <dd>
         <ul class="list">
-            <li><a href="#">PopcornUA</a></li>
-            <li><a href="#">Rusavtobus</a></li>
-            <li><a href="#">Shake&amp;Mute</a></li>
-            <li><a href="#">KIA News</a></li>
+          <% @last_projects.each do |project| %>
+            <li><%=link_to project.title, show_project_path(project) %></li>
+          <% end %>
         </ul>
     </dd>
   </dl>
