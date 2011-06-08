@@ -11,12 +11,13 @@
     </div>
   <% end %>
   <ul class="screens">
-    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
-    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
-    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
-    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
-    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
-    <li><a href="#"><%=image_tag "app-screen.jpg", :alt => ""%></a></li>
+    <% @project.media_attachments.each do |media_attachment| %>
+      <li>
+        <%=link_to media_attachment.media.url(:medium) do %>
+          <%=image_tag media_attachment.media.url(:thumb) %>
+        <% end %>
+      </li>
+    <% end %>
   </ul>
 </section>
 
