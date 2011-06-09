@@ -6,7 +6,7 @@
 </head>
 <body>
   <div style="margin-left: 60px;margin-top: 80px;text-align: center;">
-    <img src="/public/workercat.png" alt="Maintenance" />
+    <img src="/workercat.png" alt="Maintenance" />
     <h1>
       We're currently down for <%= reason ? reason : "maintenance" %>
       as of <%= Time.now.strftime("%F %T %Z") %>.
@@ -14,7 +14,7 @@
     <p>
       Sorry for the inconvenience. We'll be back 
       <%= deadline ? "by #{deadline}" : "shortly" %>.
-      Please email us if you need to get in touch.
+      Please <a href="mailto:support@catware.co">email us</a> if you need to get in touch.
     </p>
   </div>
 </body>
