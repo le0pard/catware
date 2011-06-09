@@ -32,7 +32,7 @@ end
 
 group :capistrano do
   gem 'net-ssh', "<= 2.0.24"
-  gem 'capistrano', "= 2.5.19"
+  gem 'capistrano'
   gem 'capistrano-ext', :require => 'capistrano/ext/multistage'
 end
 
