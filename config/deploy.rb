@@ -31,4 +31,19 @@ namespace :deploy do
    task :restart, :roles => :app, :except => { :no_release => true } do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
    end
+   
+   namespace :web do
+    task :disable, :roles => :web do
+      # invoke with  
+      # UNTIL="16:00 MST" REASON="a database upgrade" cap deploy:web:disable
+
+      on_rollback { rm "#{shared_path}/system/maintenance.html" }
+
+      require 'erb'
+      deadline, reason = ENV['UNTIL'], ENV['REASON']
+      maintenance = ERB.new(File.read("./app/views/layouts/maintenance.erb")).result(binding)
+
+      put maintenance, "#{shared_path}/system/maintenance.html", :mode => 0644
+    end
+  end
 end

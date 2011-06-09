@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <title>Catware Maintenance</title>
+</head>
+<body>
+  <div style="margin-left: 60px;margin-top: 80px;text-align: center;">
+    <img src="/public/workercat.png" alt="Maintenance" />
+    <h1>
+      We're currently down for <%= reason ? reason : "maintenance" %>
+      as of <%= Time.now.strftime("%H:%M %Z") %>.
+    </h1>
+    <p>
+      Sorry for the inconvenience. We'll be back 
+      <%= deadline ? "by #{deadline}" : "shortly" %>.
+      Please email us if you need to get in touch.
+    </p>
+  </div>
+</body>
+</html>
