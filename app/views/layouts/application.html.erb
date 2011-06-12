@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta name="keywords" content="Android, разработка для Android, приложение, разработка Android, Android приложение, Android приложения, разработка Android приложений, приложение для Android, Киев, Украина, мобильное приложение, разработка Android приложений, для Android, приложения для мобильных, разработка мобильных приложений" />
-  <meta name="description" content="Catware - разработка мобильных приложений для Android" />
+  <meta name="keywords" content="<%= content_for?(:meta_keywords) ? yield(:meta_keywords) : "Android, разработка для Android, приложение, разработка Android, Android приложение, Android приложения, разработка Android приложений, приложение для Android, Киев, Украина, мобильное приложение, разработка Android приложений, для Android, приложения для мобильных, разработка мобильных приложений" %>" />
+  <meta name="description" content="<%= content_for?(:meta_description) ? yield(:meta_description) : "Catware - разработка мобильных приложений для Android" %>" />
   <link href="<%= asset_path 'favicon.ico' %>" rel="shortcut icon" type="image/x-icon" />
   <title><%= content_for?(:title) ? yield(:title) : "Catware" %></title>
   <%= stylesheet_link_tag    "application" %>

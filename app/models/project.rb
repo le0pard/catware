@@ -13,6 +13,9 @@ class Project < ActiveRecord::Base
   has_many :media_attachments, :as => :owner, :dependent => :destroy
   accepts_nested_attributes_for :media_attachments, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:media].blank? }
   
+  has_many :media_videos, :as => :owner, :dependent => :destroy
+  accepts_nested_attributes_for :media_videos, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:video_key].blank? }
+  
   module TYPE
     WEB = 0
     ANDROID = 1
@@ -24,6 +27,14 @@ class Project < ActiveRecord::Base
   
   def type_human
     TYPE::HUMAN[self.type_id].capitalize
+  end
+  
+  def self.selected_types
+    selector = []
+    TYPE::HUMAN.each_index do |key|
+      selector << [TYPE::HUMAN[key].capitalize, key]
+    end
+    selector
   end
   
   def is_web?

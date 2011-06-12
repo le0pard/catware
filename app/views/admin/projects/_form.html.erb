@@ -1,13 +1,7 @@
 <div class="group">
   <%=form.label :type_id, :class => "label" %>
   <%=form.error_message_on :type_id %>
-  <%=form.select :type_id, 
-    [
-      [Project::TYPE::HUMAN[Project::TYPE::WEB], Project::TYPE::WEB], 
-      [Project::TYPE::HUMAN[Project::TYPE::ANDROID], Project::TYPE::ANDROID],
-      [Project::TYPE::HUMAN[Project::TYPE::IPHONE], Project::TYPE::IPHONE],
-      [Project::TYPE::HUMAN[Project::TYPE::IPAD], Project::TYPE::IPAD]
-    ] %>
+  <%=form.select :type_id, Project.selected_types %>
   <span class="description">Ex: some project</span>
 </div>
 <div class="group">
@@ -42,6 +36,50 @@
   <%=form.text_area :full_description, :class => "text_area", :rows => 20, :cols => 25 %>
   <span class="description">Ex: text</span>
 </div>
+<div class="group">
+  <%=form.label :meta_keywords, :class => "label" %>
+  <%=form.error_message_on :meta_keywords %>
+  <%=form.text_field :meta_keywords, :class => "text_field" %>
+  <span class="description">Ex: bla, bla-bla</span>
+</div>
+<div class="group">
+  <%=form.label :meta_description, :class => "label" %>
+  <%=form.error_message_on :meta_description %>
+  <%=form.text_area :meta_description, :class => "text_area", :rows => 5, :cols => 25 %>
+  <span class="description">Ex: text</span>
+</div>
+<h3>Videos</h3>
+<div id="media-list">
+  <%= form.fields_for :media_videos, form.object.media_videos do |media_video| %>
+    <div class="group">
+      <%=media_video.label :type_id, :class => "label" %>
+      <%=media_video.error_message_on :type_id %>
+      <%=media_video.select :type_id, MediaVideo.selected_media_types %>
+      <span class="description">Ex: some project</span>
+    </div>
+    <div class="group">
+      <%=media_video.label :video_key, :class => "label" %>
+      <%=media_video.error_message_on :video_key %>
+      <%=media_video.text_field :video_key, :class => "text_field" %>
+      <span class="description">Ex: some project</span>
+    </div>
+    <div class="group">
+      <%=media_video.label :logo, :class => "label" %>
+      <%=media_video.error_message_on :logo %>
+      <% if media_video.object.logo? %>
+        <%=image_tag media_video.object.logo.url(:thumb) %>
+      <% end %>
+      <%=media_video.file_field :logo %>
+    </div>
+    <% unless media_video.object.new_record? %>
+      <div class="group">
+        <%= media_video.check_box :_destroy %>
+        <%= media_video.label :_destroy, 'Remove' %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<h3>Screens</h3>
 <div id="attach-list">
   <%= form.fields_for :media_attachments, form.object.media_attachments do |media_attachment| %>
     <div class="group">

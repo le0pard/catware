@@ -1,4 +1,6 @@
 <%= content_for(:title, @project.title) %>
+<%= content_for(:meta_keywords, @project.meta_keywords) unless @project.meta_keywords.blank? %>
+<%= content_for(:meta_description, @project.meta_description) unless @project.meta_description.blank? %>
 
 <section class="main">
   <h1><%=@project.title%></h1>
@@ -36,10 +38,12 @@
 <span>PDF, 4 МБ</span>
 </a>
 </p>
-<div class="promo">
-<a href="#" class="movie">
-<%=image_tag "movie.png", :alt => "промо-ролик"%>
-<span>PopCorn промо-ролик</span>
-</a>
-</div> <!-- promo -->
+<% @project.media_videos.each do |media_video| %>
+  <div class="promo">
+    <a href="<%=media_video.video_url%>" class="movie">
+      <%=image_tag media_video.logo.url(:thumb), :alt => "promo"%>
+      <span>promo</span>
+    </a>
+  </div> <!-- promo -->
+<% end %>
 </aside>

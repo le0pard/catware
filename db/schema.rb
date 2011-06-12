@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110604165027) do
+ActiveRecord::Schema.define(:version => 20110612183138) do
 
   create_table "media_attachments", :force => true do |t|
     t.integer  "owner_id"
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(:version => 20110604165027) do
     t.datetime "media_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "media_videos", :force => true do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.integer  "type_id",           :default => 0
+    t.string   "video_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "projects", :force => true do |t|
@@ -36,6 +49,8 @@ ActiveRecord::Schema.define(:version => 20110604165027) do
     t.integer  "logo_img_file_size"
     t.datetime "logo_img_updated_at"
     t.string   "cached_slug"
+    t.string   "meta_keywords"
+    t.text     "meta_description"
   end
 
   create_table "slugs", :force => true do |t|
