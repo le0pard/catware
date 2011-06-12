@@ -5,11 +5,11 @@
   <div class="markdown padding_right_little">
     <%=raw(@project.full_description_markdown)%>
   </div>
+  <div id="main_screen">
   <% if @project.logo_img? %>
-    <div>
-      <%=image_tag @project.logo_img.url(:main), :alt => @project.title, :class => "app-img" %>
-    </div>
+    <%=image_tag @project.logo_img.url(:main), :alt => @project.title, :class => "app-img" %>
   <% end %>
+  </div>
   <ul class="screens">
     <% @project.media_attachments.each do |media_attachment| %>
       <li>
