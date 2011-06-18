@@ -12,6 +12,7 @@ Catware::Application.routes.draw do
   match "contacts" => 'contacts#index', :as => :contacts, :via => :get
   match "contacts" => 'contacts#create', :as => :contacts, :via => :post
   match "contacts/thank_you" => 'contacts#thank_you', :as => :thank_you_contacts, :via => :get
+  match "services/mobile_news" => 'services#mobile_news', :as => :mobile_news_services, :via => :get
   match "services/mobile" => 'services#mobile', :as => :mobile_services, :via => :get
   match "services/web" => 'services#web', :as => :web_services, :via => :get
   match "projects/:slug" => 'projects#show', :as => :show_project, :via => :get
