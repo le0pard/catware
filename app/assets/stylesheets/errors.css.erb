@@ -1,22 +1,25 @@
 .formError {
-  background: #ee0101;
-  position: relative;
-  left: 250px;
-  z-index: 5001;
+  position: absolute;
+  right: 35px;
+  top: 10px;
+  z-index: 5;
   color: #fff;
   width: 150px;
-  font-family: tahoma;
-  font-size: 11px;
-  border: 2px solid #ddd;
-  box-shadow: 0 0 6px #000;
-  -moz-box-shadow: 0 0 6px #000;
-  -webkit-box-shadow: 0 0 6px #000;
-  padding: 4px 10px 4px 10px;
-  border-radius: 6px;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
+  padding: 5px 10px;
+  text-shadow: 0 1px 0 #9D1111;
+  background-color: #E12121;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
 }
 
-.field_with_errors input, .field_with_errors textarea {
-  border: 1px solid #ee0101;
+
+.formError .arr {
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    margin-top: -5px;
+    width: 5px;
+    height: 9px;
+    background: url(<%= asset_path 'red-arrow.png' %>) no-repeat 0 50%;
 }
