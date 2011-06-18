@@ -162,7 +162,7 @@ nav li.active a {
 }
 
 .content {
-    padding-bottom: 100px;
+    padding-bottom: 140px;
 }
 
 .content:after {
@@ -218,7 +218,12 @@ nav li.active a {
 
 .markdown li, ul.list li {
     padding-left: 20px;
-    background: url(<%= asset_path 'bullet.png' %>) no-repeat 0 50%;
+    background: url(<%= asset_path 'bullet.png' %>) no-repeat 0 4px;
+}
+
+aside ul.list {
+    width: 50%;
+    margin-left: 0;
 }
 
 /* projects */
@@ -449,13 +454,16 @@ textarea {
     overflow: auto;
 }
 
+dt {
+    margin-bottom: 10px;
+}
+
 .req {
     color: #d22121;
 }
 
 .p404 {
-    margin-left: 60px;
-    margin-top: 80px;
+    margin-top: 140px;
     text-align: center;
 }
 
