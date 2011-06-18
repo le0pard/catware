@@ -3,19 +3,31 @@
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <title>Catware Maintenance</title>
+  
+  <style type="text/css" media="screen">
+    p {font: 16px arial, sans-serif; color: #555; margin: 0 0 10px;}
+    a {color: #0052cc;}
+  </style>
+  
 </head>
 <body>
-  <div style="margin-left: 60px;margin-top: 80px;text-align: center;">
+    <div style="width: 960px; height: 40px; margin: 60px auto 56px;">
+      <%=link_to root_path, :class => "logo" do %>
+        <%=image_tag "logo.png", :alt => "CatWare" %>
+      <% end %>
+    </div>
+    
+  <div style="margin-top: 80px;text-align: center; padding-bottom: 60px;">
     <img src="/workercat.png" alt="Maintenance" />
-    <h1>
-      We're currently down for <%#= reason ? reason : "maintenance" %> maintenance
-      as of <%= Time.now.strftime("%F %T %Z") %>.
+    <h1 style="font: normal 57px arial, sans-serif; margin: 0 0 10px;">
+      <span style="color: #3992D6;">Maintenance:</span> We're currently down <%#= reason ? reason : "maintenance" %> 
     </h1>
+    <p><%= Time.now.strftime("%F %T %Z") %></p>
     <p>
       Sorry for the inconvenience. We'll be back shortly
       <%#= deadline ? "by #{deadline}" : "shortly" %>.
-      Please <a href="mailto:support@catware.co">email us</a> if you need to get in touch.
     </p>
+    <p>Please <a href="mailto:support@catware.co">email us</a> if you need to get in touch.</p>
   </div>
 </body>
 </html>
