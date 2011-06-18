@@ -4,4 +4,8 @@ class DashboardController < ApplicationController
     
   end
   
+  def mainteinance
+    render "layouts/maintenance", :layout => false
+  end
+  
 end

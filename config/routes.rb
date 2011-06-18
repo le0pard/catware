@@ -17,6 +17,8 @@ Catware::Application.routes.draw do
   match "projects/:slug" => 'projects#show', :as => :show_project, :via => :get
   match "projects" => 'projects#index', :as => :projects, :via => :get
   
+  match "mainteinance", :to => 'dashboard#mainteinance'
+  
   match "404", :to => 'errors#page_not_found', :as => :page_not_found
   match "*path", :to => 'errors#page_not_found'
   

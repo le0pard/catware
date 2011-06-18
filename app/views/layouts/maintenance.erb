@@ -8,12 +8,12 @@
   <div style="margin-left: 60px;margin-top: 80px;text-align: center;">
     <img src="/workercat.png" alt="Maintenance" />
     <h1>
-      We're currently down for <%= reason ? reason : "maintenance" %>
+      We're currently down for <%#= reason ? reason : "maintenance" %> maintenance
       as of <%= Time.now.strftime("%F %T %Z") %>.
     </h1>
     <p>
-      Sorry for the inconvenience. We'll be back 
-      <%= deadline ? "by #{deadline}" : "shortly" %>.
+      Sorry for the inconvenience. We'll be back shortly
+      <%#= deadline ? "by #{deadline}" : "shortly" %>.
       Please <a href="mailto:support@catware.co">email us</a> if you need to get in touch.
     </p>
   </div>
