@@ -21,21 +21,16 @@
 
 .formError .formErrorContent {
 	width: 100%;
-	background: #ee0101;
+	background: #D22222;
 	position:relative;
-	z-index:5001;
+	z-index:5;
 	color: #fff;
 	width: 150px;
-	font-family: tahoma;
-	font-size: 11px;
-	border: 2px solid #ddd;
-	box-shadow: 0 0 6px #000;
-	-moz-box-shadow: 0 0 6px #000;
-	-webkit-box-shadow: 0 0 6px #000;
-	padding: 4px 10px 4px 10px;
-	border-radius: 6px;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
+	font-size: 12px;
+	padding: 5px 10px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
 }
 
 .greenPopup .formErrorContent {
@@ -63,14 +58,9 @@
 }
 
 .formError .formErrorArrow div {
-	border-left: 2px solid #ddd;
-	border-right: 2px solid #ddd;
-	box-shadow: 0 2px 3px #444;
-	-moz-box-shadow: 0 2px 3px #444;
-	-webkit-box-shadow: 0 2px 3px #444;
 	font-size: 0px;
 	height: 1px;
-	background: #ee0101;
+	background: #D22222;
 	margin: 0 auto;
 	line-height: 0;
 	font-size: 0;
@@ -124,19 +114,14 @@
 
 .formError .formErrorArrow .line3 {
 	width: 1px;
-	border-left: 2px solid #ddd;
-	border-right: 2px solid #ddd;
-	border-bottom: 0 solid #ddd;
 }
 
 .formError .formErrorArrow .line2 {
-	width: 3px;
+	width: 0;
 	border: none;
-	background: #ddd;
 }
 
 .formError .formErrorArrow .line1 {
-	width: 1px;
+	width: 0;
 	border: none;
-	background: #ddd;
 }
