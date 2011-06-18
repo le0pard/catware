@@ -1,26 +1,26 @@
 <section class="main">
   <h1>Contacts</h1>
   <p>You can send us a message using the form below.</p>
-  <%= form_for @contact, :url => contacts_path do |form| %>
+  <%= form_for @contact, :url => contacts_path, :html => {:id => "contact_form"} do |form| %>
    <div class="line">
       <%=form.error_message_on :name %>
       <label for="contact_name"><span class="req">*</span> Name:</label>
-      <%=form.text_field :name, :autofocus => "autofocus" %>
+      <%=form.text_field :name, :autofocus => "autofocus", :class => "validate[required]" %>
    </div> <!-- line -->
    <div class="line">
       <%=form.error_message_on :email %>
       <label for="contact_email"><span class="req">*</span> Email:</label>
-      <%=form.text_field :email %>
+      <%=form.text_field :email, :class => "validate[required,custom[email]" %>
    </div> <!-- line -->
    <div class="line">
       <%=form.error_message_on :subject %>
       <label for="contact_subject"><span class="req">*</span> Subject:</label>
-      <%=form.text_field :subject %>
+      <%=form.text_field :subject, :class => "validate[required]" %>
    </div> <!-- line -->
    <div class="line">
       <%=form.error_message_on :message %>
       <label for="contact_message"><span class="req">*</span> Message:</label>
-      <%=form.text_area :message, :rows => 5, :cols => 50 %>
+      <%=form.text_area :message, :rows => 5, :cols => 50, :class => "validate[required]" %>
    </div> <!-- line -->
    <div class="submit">
       <%=form.submit "Send" %>   
