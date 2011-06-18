@@ -73,14 +73,14 @@
 
 #slideshow-nav .nav-item {
     float: left;
-    width: 150px;
+    width: 300px;
     padding: 11px 0;
     outline: none;
 }
 
 #slideshow-nav .nav-item-line {
     float: left;
-    width: 68px;
+    width: 143px;
     height: 1px;
     line-height: 1px;
     margin: 3px 0;
@@ -111,7 +111,7 @@
     left: 0;
     width: 30px;
     height: 30px;
-    margin-left: 60px;
+    margin-left: 135px;
     background-color: #8e8d8b;
     background-color: rgba(28, 27, 23, .5);
     -webkit-border-radius: 15px;

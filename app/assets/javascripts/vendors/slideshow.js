@@ -27,7 +27,7 @@ $(function() {
         
         // animate the navigation indicator
         $activeNavItem.animate({
-            left : currSlide * 150
+            left : currSlide * 300
         }, 400, 'swing');
     }
     
