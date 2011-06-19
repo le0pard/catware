@@ -9,6 +9,7 @@ class Admin::ProjectsController < Admin::BaseController
     @project = Project.new
     @project.media_attachments.build
     @project.media_videos.build
+    @project.pdf_attachments.build
   end
   
   def create
@@ -22,6 +23,7 @@ class Admin::ProjectsController < Admin::BaseController
   
   def edit
     @project.media_videos.build
+    @project.pdf_attachments.build
   end
   
   def update

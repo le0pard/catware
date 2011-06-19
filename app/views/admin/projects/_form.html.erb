@@ -48,6 +48,7 @@
   <%=form.text_area :meta_description, :class => "text_area", :rows => 5, :cols => 25 %>
   <span class="description">Ex: text</span>
 </div>
+<hr />
 <h3>Videos</h3>
 <div id="media-list">
   <%= form.fields_for :media_videos, form.object.media_videos do |media_video| %>
@@ -79,6 +80,7 @@
     <% end %>
   <% end %>
 </div>
+<hr />
 <h3>Screens</h3>
 <div id="attach-list">
   <%= form.fields_for :media_attachments, form.object.media_attachments do |media_attachment| %>
@@ -101,3 +103,30 @@
 <div class="group">
   <a href="#" id="attach-more">Add more images</a>
 </div>
+<hr />
+<h3>Pdf files</h3>
+<div id="attach-list">
+  <%= form.fields_for :pdf_attachments, form.object.pdf_attachments do |pdf_attachment| %>
+    <div class="group">
+      <%=pdf_attachment.label :title, :class => "label" %>
+      <%=pdf_attachment.error_message_on :title %>
+      <%=pdf_attachment.text_field :title, :class => "text_field" %>
+      <span class="description">Ex: some project</span>
+    </div>
+    <div class="group">
+      <%=pdf_attachment.label :pdf, :class => "label" %>
+      <%=pdf_attachment.error_message_on :pdf %>
+      <% if pdf_attachment.object.pdf? %>
+        <%=pdf_attachment.object.pdf_file_name %>
+      <% end %>
+      <%=pdf_attachment.file_field :pdf %>
+    </div>
+    <% unless pdf_attachment.object.new_record? %>
+      <div class="group">
+        <%= pdf_attachment.check_box :_destroy %>
+        <%= pdf_attachment.label :_destroy, 'Remove' %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<hr />

@@ -8,9 +8,9 @@
     <%=raw(@project.full_description_markdown)%>
   </div>
   <div class="big_android">
-  <% if @project.logo_img? %>
-    <%=image_tag @project.logo_img.url(:main), :alt => @project.title, :class => "app-img" %>
-  <% end %>
+    <% if @project.logo_img? %>
+      <%=image_tag @project.logo_img.url(:main), :alt => @project.title, :class => "app-img" %>
+    <% end %>
   </div>
   <ul class="screens">
     <li>
@@ -38,10 +38,12 @@
   </p>
 <% end %>
 <p>
-<a href="#" class="pdf">
-<em>Руководство по использованию</em>
-<span>PDF, 4 МБ</span>
-</a>
+<% @project.pdf_attachments.each do |pdf_attachment| %>
+  <%=link_to pdf_attachment.pdf.url, :class => "pdf" do %>
+    <em><%=pdf_attachment.title%></em>
+    <span><%=pdf_attachment.pdf_content_type%>, <%=number_to_human_size(pdf_attachment.pdf_file_size)%></span>
+  <% end %>
+<% end %>
 </p>
 <% @project.media_videos.each do |media_video| %>
   <div class="promo">

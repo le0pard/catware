@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110612183138) do
+ActiveRecord::Schema.define(:version => 20110619105009) do
 
   create_table "media_attachments", :force => true do |t|
     t.integer  "owner_id"
@@ -34,6 +34,18 @@ ActiveRecord::Schema.define(:version => 20110612183138) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+  end
+
+  create_table "pdf_attachments", :force => true do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.string   "title"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "projects", :force => true do |t|

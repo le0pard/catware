@@ -16,6 +16,9 @@ class Project < ActiveRecord::Base
   has_many :media_videos, :as => :owner, :dependent => :destroy
   accepts_nested_attributes_for :media_videos, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:video_key].blank? }
   
+  has_many :pdf_attachments, :as => :owner, :dependent => :destroy
+  accepts_nested_attributes_for :pdf_attachments, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:title].blank? }
+  
   module TYPE
     WEB = 0
     ANDROID = 1
