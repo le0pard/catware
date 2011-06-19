@@ -46,11 +46,27 @@
 <% end %>
 </p>
 <% @project.media_videos.each do |media_video| %>
-  <div class="promo">
-    <a href="<%=media_video.video_url%>" class="movie">
+  <div class="promo video_block">
+    <a href="#video_box<%=media_video.id%>" class="movie <%=media_video.human_type%>">
       <%=image_tag media_video.logo.url(:thumb), :alt => "promo"%>
       <span>promo</span>
     </a>
+    <div style="display:none"> 
+      <div id="video_box<%=media_video.id%>">
+        <% if media_video.is_youtube? %>
+          <object type="application/x-shockwave-flash" width="640" height="510" data="http://www.youtube.com/v/<%=media_video.video_key%>&amp;rel=0">
+            <param name="movie" value="http://www.youtube.com/v/<%=media_video.video_key%>&amp;rel=0">
+            <param name="wmode" value="transparent">
+            <param name="quality" value="high">
+          </object>
+        <% elsif media_video.is_vimeo? %>
+          <object type="application/x-shockwave-flash" width="425" height="355" data="http://www.vimeo.com/moogaloop.swf?clip_id=<%=media_video.video_key%>&amp;server=www.vimeo.com&amp;fullscreen=1&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=">
+            <param name="movie" value="http://www.vimeo.com/moogaloop.swf?clip_id=<%=media_video.video_key%>&amp;server=www.vimeo.com&amp;fullscreen=1&amp;show_title=0&amp;show_byline=0&amp;show_portrait=0&amp;color=">
+            <param name="wmode" value="transparent"><param name="quality" value="high">
+          </object>
+        <% end %>
+      </div>
+    </div>
   </div> <!-- promo -->
 <% end %>
 </aside>

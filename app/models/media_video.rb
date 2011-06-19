@@ -9,6 +9,18 @@ class MediaVideo < ActiveRecord::Base
     HUMAN     = ["youtube", "vimeo"]
   end
   
+  def is_youtube?
+    MEDIA_TYPES::YOUTUBE == self.type_id
+  end
+  
+  def is_vimeo?
+    MEDIA_TYPES::VIMEO == self.type_id
+  end
+  
+  def human_type
+    MEDIA_TYPES::HUMAN[self.type_id]
+  end
+  
   def self.selected_media_types
     selector = []
     MEDIA_TYPES::HUMAN.each_index do |key|
