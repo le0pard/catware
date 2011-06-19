@@ -9,7 +9,7 @@ class Notifications < ActionMailer::Base
   #
   def contact(contact_obj)
     @contact = contact_obj
-    mail to: "contact@catware.co", 
+    mail to: "contacts@catware.co", 
          subject: "New Customer Contact Us"
   end
 end

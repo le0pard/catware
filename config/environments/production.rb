@@ -55,7 +55,7 @@ Catware::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'catware.co',
-    :user_name            => 'support',
+    :user_name            => 'support@catware.co',
     :password             => 'supportsupport123',
     :authentication       => 'plain',
     :enable_starttls_auto => true 
