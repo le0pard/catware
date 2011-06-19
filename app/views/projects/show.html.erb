@@ -13,6 +13,11 @@
   <% end %>
   </div>
   <ul class="screens">
+    <li>
+      <%=link_to @project.logo_img.url(:main) do %>
+        <%=image_tag @project.logo_img.url(:thumb) %>
+      <% end %>
+    </li>
     <% @project.media_attachments.each do |media_attachment| %>
       <li>
         <%=link_to media_attachment.media.url(:medium) do %>
