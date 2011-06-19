@@ -5,10 +5,9 @@ class ProjectsObject
     $('ul.screens a').live 'click', (event) => 
       object = $(event.target)
       url = object.parent('a').attr('href')
-      if (!url.nil?)
-        if (!$('#main_screen').hasClass('screens_background'))
-          $('#main_screen').addClass('screens_background')
-        $('#main_screen').html('<div class="screen_img"><img src="' + url + '" alt ="img" /></div>')
+      if (url?)
+        $('.big_android img').animate {opacity: 0}, 'slow', (event) => 
+          $('.big_android img').attr('src', url).animate({opacity: 1})
       return false
       
     

@@ -7,7 +7,7 @@
   <div class="markdown padding_right_little">
     <%=raw(@project.full_description_markdown)%>
   </div>
-  <div id="main_screen">
+  <div class="big_android">
   <% if @project.logo_img? %>
     <%=image_tag @project.logo_img.url(:main), :alt => @project.title, :class => "app-img" %>
   <% end %>
