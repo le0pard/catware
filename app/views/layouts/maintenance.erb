@@ -20,12 +20,11 @@
   <div style="margin-top: 80px;text-align: center; padding-bottom: 60px;">
     <img src="/workercat.png" alt="Maintenance" />
     <h1 style="font: normal 57px arial, sans-serif; margin: 0 0 10px;">
-      <span style="color: #3992D6;">Maintenance:</span> We're currently down <%#= reason ? reason : "maintenance" %> 
+      <span style="color: #3992D6;">Maintenance:</span> We're currently down <%= reason ? reason : "maintenance" %> 
     </h1>
     <p><%= Time.now.strftime("%F %T %Z") %></p>
     <p>
-      Sorry for the inconvenience. We'll be back shortly
-      <%#= deadline ? "by #{deadline}" : "shortly" %>.
+      Sorry for the inconvenience. We'll be back <%= deadline ? "by #{deadline}" : "shortly" %>.
     </p>
     <p>Please <a href="mailto:support@catware.co">email us</a> if you need to get in touch.</p>
   </div>
