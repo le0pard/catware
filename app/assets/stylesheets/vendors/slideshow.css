@@ -4,6 +4,7 @@
     overflow: hidden;
     position: relative;
     margin: 20px auto;
+    padding-bottom: 100px;
 }
 
 #slideshow-reel {
@@ -21,15 +22,20 @@
     background-color: #FFF;
 }
 
-#slideshow-reel .slide:nth-child(2n+1) {
-    background-color: #CCC;
+.slide.middle {
+    text-align: center;
+}
+
+.slide.middle img {
+    float: none;
+}
+
+.slide.middle h1.motto {
+    padding-top: 20px;
 }
 
 #slideshow-reel h1 {
-    margin: 25px 60px;
-    color: #FFF;
-    font-size: 3em;
-    text-shadow: 0 -1px 1px #333;
+    
 }
 
 /* arrow navigation */
@@ -54,12 +60,12 @@
 
 #slideshow-left {
     left: 0;
-    border-right-color: #fff;
+    border-right-color: #ddd;
 }
 
 #slideshow-right {
     right: 0;
-    border-left-color: #fff;
+    border-left-color: #ddd;
 }
 
 /* bottom navigation */
