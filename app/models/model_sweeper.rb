@@ -15,15 +15,15 @@ class ModelSweeper < ActionController::Caching::Sweeper
  
   private
   def expire_cache_for(object)
-    expire_page(:controller => '/projects', :action => 'index')
+    expire_page(projects_path)
     Project.all.each do |project|
-      expire_page(:controller => '/projects', :action => 'show', :id => project)
+      expire_page(show_project_path(project))
     end
-    expire_page(:controller => '/services', :action => 'mobile')
-    expire_page(:controller => '/services', :action => 'web')
-    expire_page(:controller => '/services', :action => 'mobile_news')
-    expire_page(:controller => '/contacts', :action => 'thank_you')
-    expire_page(:controller => '/errors', :action => 'page_not_found')
-    expire_page(:controller => '/dashboard', :action => 'index')
+    expire_page(web_services_path)
+    expire_page(mobile_services_path)
+    expire_page(mobile_news_services_path)
+    expire_page(thank_you_contacts_path)
+    expire_page(page_not_found_path)
+    expire_page(root_path)
   end
 end
