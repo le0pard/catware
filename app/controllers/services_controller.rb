@@ -1,8 +1,12 @@
 class ServicesController < ApplicationController
   before_filter :get_projects
-  #caches_page :mobile, :web
+  caches_page :mobile, :web, :mobile_news
   
   def mobile
+    
+  end
+  
+  def mobile_news
     
   end
   

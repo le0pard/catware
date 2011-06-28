@@ -25,6 +25,10 @@ task :assets_precompile, :roles => :app, :except => { :no_release => true } do
   run "cd #{release_path}; bundle exec rake assets:precompile RAILS_ENV=#{rails_env}"
 end
 
+deploy.task :clean_cache, :roles => :app, :except => { :no_release => true }, :on_error => :continue do
+  run "rm -fr #{current_path}/public/cache/*", :once => true
+end
+
 namespace :deploy do
    task :start do ; end
    task :stop do ; end

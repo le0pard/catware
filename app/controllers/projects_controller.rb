@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
   
+  caches_page :index, :show
+  
   def index
     @projects = Project.order("created_at DESC").page(params[:page])
   end

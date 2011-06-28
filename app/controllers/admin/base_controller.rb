@@ -2,6 +2,7 @@ class Admin::BaseController < ApplicationController
   layout "admin"
   abstract!
   before_filter :is_login
+  cache_sweeper :model_sweeper
   
   private
   
