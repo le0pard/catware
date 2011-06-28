@@ -41,7 +41,7 @@
 <% @project.pdf_attachments.each do |pdf_attachment| %>
   <%=link_to pdf_attachment.pdf.url, :class => "pdf", :target => "_blank" do %>
     <em><%=pdf_attachment.title%></em>
-    <span><%=pdf_attachment.pdf_content_type%>, <%=number_to_human_size(pdf_attachment.pdf_file_size)%></span>
+    <span><%=number_to_human_size(pdf_attachment.pdf_file_size)%></span>
   <% end %>
 <% end %>
 </p>
