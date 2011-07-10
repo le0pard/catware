@@ -16,7 +16,7 @@
     <li>
       <%=link_to @project.logo_img.url(:main) do %>
         <%=image_tag @project.logo_img.url(:thumb) %>
-      <% end %>
+      <% end if @project.media_attachments.count > 0 %>
     </li>
     <% @project.media_attachments.each do |media_attachment| %>
       <li>
