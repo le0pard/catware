@@ -37,14 +37,14 @@
     <a href="https://market.android.com/details?id=<%=@project.project_name%>"><%=image_tag "market.png", :alt => "market"%></a>
   </p>
 <% end %>
-<p>
 <% @project.pdf_attachments.each do |pdf_attachment| %>
+  <p>
   <%=link_to pdf_attachment.pdf.url, :class => "pdf", :target => "_blank" do %>
     <em><%=pdf_attachment.title%></em>
     <span><%=number_to_human_size(pdf_attachment.pdf_file_size)%></span>
   <% end %>
+  </p>
 <% end %>
-</p>
 <% @project.media_videos.each do |media_video| %>
   <div class="promo video_block">
     <a href="#video_box<%=media_video.id%>" class="movie <%=media_video.human_type%>">
