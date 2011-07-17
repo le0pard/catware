@@ -9,6 +9,7 @@ Catware::Application.routes.draw do
     root :to => 'projects#index'
   end
   
+  match "about" => 'about#index', :as => :about, :via => :get
   match "contacts" => 'contacts#index', :as => :contacts, :via => :get
   match "contacts" => 'contacts#create', :as => :contacts, :via => :post
   match "contacts/thank_you" => 'contacts#thank_you', :as => :thank_you_contacts, :via => :get
