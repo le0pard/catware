@@ -10,9 +10,6 @@
       <span class="country-name">Ukraine</span>,
       <span class="locality">Kiev</span>
     </div>
-    <div class="mailbox">
-      <%=mail_to "contacts@catware.co", "Email us", :encode => "hex", :replace_at => "[at]", :replace_dot => "[dot]" %>
-    </div>
-    <!--<div class="im">catware</div>--> <!-- im -->
+      <%=mail_to "contacts@catware.co", "Email us", :class =>'email', :encode => "hex", :replace_at => "[at]", :replace_dot => "[dot]" %>
   </div> <!-- vcard -->
 </aside>

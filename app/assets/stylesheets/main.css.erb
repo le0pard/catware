@@ -345,11 +345,11 @@ ul.list.featured li img {
     text-align: center;
 }
 
-.services li .image.left {
+.left {
     float: left;
 }
 
-.services li .image.right {
+.right {
     float: right;
 }
 
@@ -379,28 +379,29 @@ ul.list.featured li img {
 .app-nav li.active a {
     padding-left: 35px;
     margin-left: -35px;
+    text-shadow: 1px 1px 0 #4C92C4;
     background: #65bfff url(<%= asset_path 'app-nav-active.png' %>) no-repeat 0 0;
     color: #fff;
 }
 
 /* vcard */
 .vcard {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .vcard .org,
-.vcard .mailbox,
+.vcard .email,
 .vcard .tel,
-.vcard .org,
 .vcard .im,
 .vcard .adr {
+    display: block;
     height: 30px;
     padding-left: 35px;
     line-height: 30px;
     background: url(<%= asset_path 'icons.png' %>) no-repeat 0 3px;
 }
 
-.vcard .mailbox {
+.vcard .email {
     background-position: 0 -30px;
 }
 
@@ -412,7 +413,12 @@ ul.list.featured li img {
     background-position: 0 -96px;
 }
 
-.vcard .org {
+.vcard .title {
+    color: #999;
+}
+
+.vcard .org,
+.vcard .tel .type {
     display: none;
 }
 
@@ -534,4 +540,30 @@ dt {
     padding: 5px 0 5px 25px;
     color: #333;
     background: url(<%= asset_path 'basecamp.png' %>) no-repeat 0 50%;
+}
+
+/* team */
+.team li {
+    overflow: hidden;
+    padding: 20px 0;
+    margin-bottom: 0;
+    border-top: 1px solid #f2f2f2;
+}
+
+.team li h2 {
+    margin-bottom: 5px;
+}
+
+.team li:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.team img {
+    margin-right: 20px;
+}
+
+.col1 {
+    width: 160px;
+    margin-right: 40px;
 }
