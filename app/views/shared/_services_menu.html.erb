@@ -9,7 +9,12 @@
     <dd>
         <ul class="list">
           <% @last_projects.each do |project| %>
-            <li><%=link_to project.title, show_project_path(project) %></li>
+            <li>
+              <%=link_to show_project_path(project) do %>
+                <%= image_tag project.icon.url(:main), :alt => project.title if project.icon? %>
+                <%= project.title %>
+              <% end %>
+            </li>
           <% end %>
         </ul>
     </dd>

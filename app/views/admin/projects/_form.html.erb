@@ -25,6 +25,14 @@
   <%=form.file_field :logo_img %>
 </div>
 <div class="group">
+  <%=form.label :icon, :class => "label" %>
+  <%=form.error_message_on :icon %>
+  <% if form.object.icon? %>
+    <%=image_tag form.object.icon.url(:main) %>
+  <% end %>
+  <%=form.file_field :icon %>
+</div>
+<div class="group">
   <%=form.label :short_description, :class => "label" %>
   <%=form.error_message_on :short_description %>
   <%=form.text_area :short_description, :class => "text_area", :rows => 10, :cols => 25 %>

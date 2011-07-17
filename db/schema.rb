@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110619105009) do
+ActiveRecord::Schema.define(:version => 20110717100810) do
 
   create_table "media_attachments", :force => true do |t|
     t.integer  "owner_id"
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(:version => 20110619105009) do
     t.string   "cached_slug"
     t.string   "meta_keywords"
     t.text     "meta_description"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
   end
 
   create_table "slugs", :force => true do |t|

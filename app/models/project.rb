@@ -9,6 +9,8 @@ class Project < ActiveRecord::Base
                     :styles => { :main => "220x365#",
                                  :medium => "180x300#",
                                  :thumb => "100x100#" }
+  has_attached_file :icon, 
+                    :styles => { :main => "57x57#" }
   
   has_many :media_attachments, :as => :owner, :dependent => :destroy
   accepts_nested_attributes_for :media_attachments, :allow_destroy => true, :reject_if => proc { |attrs| attrs[:media].blank? }
