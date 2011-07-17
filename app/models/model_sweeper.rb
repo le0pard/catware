@@ -22,6 +22,7 @@ class ModelSweeper < ActionController::Caching::Sweeper
     expire_page(web_services_path)
     expire_page(mobile_services_path)
     expire_page(mobile_news_services_path)
+    expire_page(about_path)
     expire_page(thank_you_contacts_path)
     expire_page(page_not_found_path)
     expire_page(root_path)
