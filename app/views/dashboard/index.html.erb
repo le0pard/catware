@@ -1,7 +1,7 @@
 <div id="slideshow">
     <div id="slideshow-reel">
         <div class="slide">
-          <%=link_to projects_path, :class => "main_link" do %>
+          <%=link_to mobile_services_path, :class => "main_link" do %>
             <%=image_tag "splash1.png", :class => "phone-img", :alt => "" %>
             <h1 class="motto">
               We know how to develop great <strong>Mobile App</strong>
@@ -10,19 +10,21 @@
         </div>
         
         <div class="slide middle">
-          <%=link_to mobile_services_path, :class => "main_link" do %>
+          <%=link_to mobile_news_services_path, :class => "main_link" do %>
             <%=image_tag "splash2.png", :class => "phone-img", :alt => "" %>
             <h1 class="motto">
-              We know how to develop great <strong>Mobile App</strong>
+              Mobile News - <strong>Power to share information</strong>
             </h1>
           <% end %>
         </div>
         
         <div class="slide">
-            <%=image_tag "splash1.png", :class => "phone-img", :alt => "" %>
-            <h1 class="motto">
-              We know how to develop great <strong>Mobile App</strong>
-            </h1>
+            <%=link_to projects_path, :class => "main_link" do %>
+              <%=image_tag "splash3.png", :class => "phone-img right", :alt => "" %>
+              <h1 class="motto">
+                Our projects <strong>Meet our apps</strong>
+              </h1>
+            <% end %>
         </div>
         
     </div>
