@@ -1,7 +1,11 @@
 class ProjectsObject
   constructor: ->
+    this.init_main_slideshow()
     this.init_screens()
     this.init_videos()
+  init_main_slideshow: ->
+    if ($('#slideshow').length > 0)
+      $('#slideshow').orbit({bullets: true})
   init_screens: ->
     $('ul.screens a').live 'click', (event) => 
       object = $(event.target)

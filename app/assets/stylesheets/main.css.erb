@@ -569,3 +569,20 @@ dt {
     width: 160px;
     margin-right: 40px;
 }
+
+/* slideshow */
+#slideshow { 
+  width: 940px;
+  height: 450px;
+  background: #000 url('<%= asset_path 'vendors/orbit/loading.gif' %>') no-repeat center center; 
+  overflow: hidden; 
+}
+#slideshow img, #slideshow div { display: none; }
+#slideshow .slide {
+  width: 900px;
+  height: 450px;
+  background: #000 url('<%= asset_path 'vendors/orbit/coffee.jpg' %>') no-repeat center center; 
+}
+#slideshow .motto {
+  margin: 0 100px;
+}
