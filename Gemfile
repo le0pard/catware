@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc1'
+gem 'rails', '3.1.0.rc4'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -18,7 +18,7 @@ gem 'uglifier'
 gem 'paperclip'
 gem 'kaminari'
 gem 'settingslogic'
-gem 'therubyracer', '0.9.0beta3'
+gem 'therubyracer'
 gem 'nested_set'
 gem 'dynamic_form'
 gem 'rdiscount', :require => 'rdiscount'
