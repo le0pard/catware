@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc5'
+gem 'rails', '3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -22,16 +22,16 @@ gem 'therubyracer'
 gem 'nested_set'
 gem 'dynamic_form'
 gem 'rdiscount', :require => 'rdiscount'
-gem "friendly_id", "~> 3.3.0.alpha2"
+gem "friendly_id"
 
 gem 'jquery-rails'
 
 group :development, :test do
-  gem 'web-app-theme', '>= 0.6.2'
+  gem 'web-app-theme'
 end
 
 group :capistrano do
-  gem 'net-ssh', "<= 2.0.24"
+  gem 'net-ssh'
   gem 'capistrano'
   gem 'capistrano-ext', :require => 'capistrano/ext/multistage'
 end
