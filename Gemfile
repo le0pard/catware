@@ -12,9 +12,6 @@ gem 'thin'
 
 # Asset template engines
 gem 'json'
-gem 'sass'
-gem 'coffee-script'
-gem 'uglifier'
 gem 'paperclip'
 gem 'kaminari'
 gem 'settingslogic'
@@ -24,9 +21,15 @@ gem 'dynamic_form'
 gem 'rdiscount', :require => 'rdiscount'
 gem "friendly_id"
 
-gem 'jquery-rails'
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
+
 
 group :development, :test do
+  gem 'jquery-rails'
   gem 'web-app-theme'
 end
 
