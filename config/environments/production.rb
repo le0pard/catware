@@ -11,7 +11,7 @@ Catware::Application.configure do
   config.action_controller.page_cache_directory = "#{Rails.public_path}/cache"
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = true
+  config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
