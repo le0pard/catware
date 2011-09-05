@@ -7,6 +7,8 @@ require File.expand_path('../../lib/capistrano_recipes/tasks/unicorn.rb', __FILE
 #require File.expand_path('../../lib/capistrano_recipes/tasks/thin.rb', __FILE__)
 #Dir['lib/capistrano_recipes/tasks/*.rb'].each { |task| require task }
 
+load 'deploy/assets'
+
 set :stages, %w(production)
 set :default_stage, "production"
 
@@ -22,9 +24,9 @@ set :keep_releases, 3
 
 set :rvm_ruby_string, '1.9.2@catware_gems'
 
-task :assets_precompile, :roles => :app, :except => { :no_release => true } do
-  run "cd #{release_path}; bundle exec rake assets:precompile RAILS_ENV=#{rails_env}"
-end
+#task :assets_precompile, :roles => :app, :except => { :no_release => true } do
+#  run "cd #{release_path}; bundle exec rake assets:precompile RAILS_ENV=#{rails_env}"
+#end
 
 deploy.task :clean_cache, :roles => :app, :except => { :no_release => true }, :on_error => :continue do
   run "rm -fr #{current_path}/public/cache/*", :once => true
