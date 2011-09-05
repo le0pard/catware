@@ -169,6 +169,7 @@ DEPENDENCIES
   rvm
   sass-rails
   settingslogic
+  sprockets
   sqlite3
   therubyracer
   thin

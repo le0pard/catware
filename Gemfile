@@ -26,6 +26,8 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
 end
+
+gem "sprockets"
 gem 'execjs'
 gem 'jquery-rails'
 
