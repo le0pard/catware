@@ -27,7 +27,7 @@ group :assets do
   gem 'uglifier'
 end
 
-gem "sprockets"
+gem "sprockets", :git => "git://github.com/sstephenson/sprockets.git"
 gem 'execjs'
 gem 'jquery-rails'
 
