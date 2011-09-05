@@ -26,4 +26,3 @@ set :deploy_to, "/var/data/www/apps/#{application}"
 
 before "deploy", "deploy:web:disable"
 after "deploy", "deploy:migrate", "deploy:unicorn:restart", "deploy:cleanup", "deploy:clean_cache", "deploy:web:enable"
-after 'deploy:update_code', 'deploy:assets:clean', 'deploy:assets:precompile'
