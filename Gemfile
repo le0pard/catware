@@ -26,7 +26,7 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
 end
-
+gem 'execjs'
 gem 'jquery-rails'
 
 group :development, :test do

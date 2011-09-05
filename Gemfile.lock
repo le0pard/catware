@@ -155,6 +155,7 @@ DEPENDENCIES
   capistrano-ext
   coffee-rails
   dynamic_form
+  execjs
   friendly_id
   jquery-rails
   json
