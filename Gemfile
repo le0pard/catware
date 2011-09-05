@@ -11,6 +11,10 @@ gem 'rvm'
 gem 'thin'
 
 # Asset template engines
+gem "sprockets", :git => "git://github.com/sstephenson/sprockets.git"
+gem 'execjs'
+gem 'jquery-rails'
+
 gem 'json'
 gem 'paperclip'
 gem 'kaminari'
@@ -27,10 +31,6 @@ group :assets do
   gem 'uglifier'
 end
 
-gem "sprockets", :git => "git://github.com/sstephenson/sprockets.git"
-gem 'execjs'
-gem 'jquery-rails'
-
 group :development, :test do
   gem 'web-app-theme'
 end
@@ -38,6 +38,6 @@ end
 group :capistrano do
   gem 'net-ssh'
   gem 'capistrano'
-  gem 'capistrano-ext', :require => 'capistrano/ext/multistage'
+  gem 'capistrano-ext'
 end
 
