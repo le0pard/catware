@@ -27,9 +27,9 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'jquery-rails'
 
 group :development, :test do
-  gem 'jquery-rails'
   gem 'web-app-theme'
 end
 
