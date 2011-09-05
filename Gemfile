@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'pg'
 gem 'rvm'
 gem 'thin'
+gem 'unicorn'
 
 # Asset template engines
 gem "sprockets"
