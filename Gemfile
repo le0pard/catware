@@ -11,7 +11,7 @@ gem 'rvm'
 gem 'thin'
 
 # Asset template engines
-gem "sprockets", :git => "git://github.com/sstephenson/sprockets.git"
+gem "sprockets"
 gem 'execjs'
 gem 'jquery-rails'
 
