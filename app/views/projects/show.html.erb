@@ -7,22 +7,34 @@
   <div class="markdown padding_right_little">
     <%=raw(@project.full_description_markdown)%>
   </div>
-  <div class="big_android">
+  <div class="big_<%= @project.type_human_css %>">
     <% if @project.logo_img? %>
-      <%=image_tag @project.logo_img.url(:main), :alt => @project.title, :class => "app-img" %>
+      <% if @project.is_android? %>
+        <%=image_tag @project.logo_img.url(:main), :alt => @project.title, :class => "app-img" %>
+      <% elsif @project.is_iphone? %>
+        <%=image_tag @project.logo_img.url(:main_iphone), :alt => @project.title, :class => "app-img" %>
+      <% end %>
     <% end %>
   </div>
   <ul class="screens">
-    <li>
-      <%=link_to @project.logo_img.url(:main) do %>
-        <%=image_tag @project.logo_img.url(:thumb) %>
-      <% end if @project.media_attachments.count > 0 %>
-    </li>
+    <% if @project.media_attachments.count > 0 %>
+      <li>
+        <%=link_to @project.logo_img.url(:main) do %>
+          <%=image_tag @project.logo_img.url(:thumb) %>
+        <% end if @project.is_android? %>
+        <%=link_to @project.logo_img.url(:main_iphone) do %>
+          <%=image_tag @project.logo_img.url(:thumb) %>
+        <% end if @project.is_iphone? %>
+      </li>
+    <% end %>
     <% @project.media_attachments.each do |media_attachment| %>
       <li>
         <%=link_to media_attachment.media.url(:medium) do %>
           <%=image_tag media_attachment.media.url(:thumb) %>
-        <% end %>
+        <% end if @project.is_android? %>
+        <%=link_to media_attachment.media.url(:medium_iphone) do %>
+          <%=image_tag media_attachment.media.url(:thumb) %>
+        <% end if @project.is_iphone? %>
       </li>
     <% end %>
   </ul>
@@ -35,6 +47,13 @@
   </p>
   <p>
     <a href="https://market.android.com/details?id=<%=@project.project_name%>"><%=image_tag "market.png", :alt => "market"%></a>
+  </p>
+<% elsif @project.is_iphone? %>
+  <p>
+    <img class="qrcode" src="http://chart.apis.google.com/chart?cht=qr&chs=164x164&chl=<%=@project.project_name%>" alt="<%=@project.title%>" />
+  </p>
+  <p>
+    <a href="<%=@project.project_name%>"><%=image_tag "appstore_btn.png", :alt => "appstore" %></a>
   </p>
 <% end %>
 <% @project.pdf_attachments.each do |pdf_attachment| %>

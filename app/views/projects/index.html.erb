@@ -6,8 +6,12 @@
       <div class="markdown"><%=raw(project.short_description_markdown)%></div>
       <% if project.logo_img? %>
         <%=link_to show_project_path(project) do %>
-          <div class="small_android">
-            <%=image_tag project.logo_img.url(:medium), :alt => project.title %>
+          <div class="small_<%=project.type_human_css%>">
+            <% if project.is_android? %>
+              <%=image_tag project.logo_img.url(:medium), :alt => project.title %>
+            <% elsif project.is_iphone? %>
+              <%=image_tag project.logo_img.url(:medium_iphone), :alt => project.title %>
+            <% end %>
           </div>
         <% end %>
       <% end %>

@@ -7,7 +7,9 @@ class Project < ActiveRecord::Base
   
   has_attached_file :logo_img, 
                     :styles => { :main => "220x365#",
+                                 :main_iphone => "220x332#",
                                  :medium => "180x300#",
+                                 :medium_iphone => "180x271#",
                                  :thumb => "100x100#" }
   has_attached_file :icon, 
                     :styles => { :main => "57x57#" }
@@ -34,6 +36,10 @@ class Project < ActiveRecord::Base
     TYPE::HUMAN[self.type_id].capitalize
   end
   
+  def type_human_css
+    TYPE::HUMAN[self.type_id]
+  end
+  
   def self.selected_types
     selector = []
     TYPE::HUMAN.each_index do |key|
@@ -48,6 +54,10 @@ class Project < ActiveRecord::Base
   
   def is_android?
     TYPE::ANDROID == self.type_id
+  end
+  
+  def is_iphone?
+    TYPE::IPHONE == self.type_id
   end
   
   def short_description_markdown
