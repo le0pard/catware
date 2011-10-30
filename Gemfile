@@ -15,6 +15,7 @@ gem 'unicorn'
 gem "sprockets"
 gem 'execjs'
 gem 'jquery-rails'
+gem 'bcrypt-ruby'
 
 gem 'json'
 gem 'paperclip'

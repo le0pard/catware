@@ -31,6 +31,7 @@ GEM
       multi_json (~> 1.0)
     arel (2.2.1)
     babosa (0.3.5)
+    bcrypt-ruby (3.0.1)
     builder (3.0.0)
     capistrano (2.9.0)
       highline
@@ -160,6 +161,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
   capistrano
   capistrano-ext
   coffee-rails
