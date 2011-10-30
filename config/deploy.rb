@@ -22,7 +22,7 @@ default_run_options[:pty] = true
 
 set :keep_releases, 3
 
-set :rvm_ruby_string, '1.9.2@catware_gems'
+set :rvm_ruby_string, 'ruby-1.9.3-rc1@catware_gems'
 
 #task :assets_precompile, :roles => :app, :except => { :no_release => true } do
 #  run "cd #{release_path}; bundle exec rake assets:precompile RAILS_ENV=#{rails_env}"

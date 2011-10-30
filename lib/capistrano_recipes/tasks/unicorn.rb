@@ -20,10 +20,10 @@ Capistrano::Configuration.instance.load do
         Restart unicorn
       DESC
       task :restart, :except => { :no_release => true }, :on_error => :continue do
-        #run "kill -USR2 `cat #{shared_path}/tmp/pids/unicorn.pid`" 
-        deploy.unicorn.stop
-        sleep 1
-        deploy.unicorn.start
+        run "kill -USR2 `cat #{shared_path}/tmp/pids/unicorn.pid`" 
+        #deploy.unicorn.stop
+        #sleep 1
+        #deploy.unicorn.start
       end
       
       desc <<-DESC
@@ -37,7 +37,7 @@ Capistrano::Configuration.instance.load do
         Stop unicorn
       DESC
       task :stop, :except => { :no_release => true }, :on_error => :continue do
-        run "kill -9 `cat #{shared_path}/tmp/pids/unicorn.pid`"
+        run "kill -QUIT `cat #{shared_path}/tmp/pids/unicorn.pid`"
       end
 
     end

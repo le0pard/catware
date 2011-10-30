@@ -10,7 +10,7 @@ old_pid    = pid_file + '.oldbin'
  
 timeout 30
  
-worker_processes 8
+worker_processes 2
  
 # Listen on a Unix data socket
 listen socket_file, :backlog => 1024
