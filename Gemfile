@@ -41,5 +41,6 @@ group :capistrano do
   gem 'net-ssh'
   gem 'capistrano'
   gem 'capistrano-ext'
+  gem 'rvm-capistrano'
 end
 

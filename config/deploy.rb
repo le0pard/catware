@@ -1,6 +1,5 @@
 require "capistrano/ext/multistage"
 require "bundler/capistrano"
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require "rvm/capistrano"
 require File.expand_path('../../lib/capistrano_recipes/tasks/capistrano_database_yml.rb', __FILE__)
 require File.expand_path('../../lib/capistrano_recipes/tasks/unicorn.rb', __FILE__)
